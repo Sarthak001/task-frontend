@@ -1,8 +1,5 @@
 import axios from "axios"
-
-
 const BASE_URI = "http://localhost:3000/api/v1/"
-
 
 const createForm = async (data: object) => {
     const jsonformatted = JSON.stringify(data)
@@ -17,7 +14,6 @@ const createForm = async (data: object) => {
     });
     return response.data
 }
-
 const getForms = async () => {
     const response = await axios({
         method: 'GET',
@@ -27,7 +23,6 @@ const getForms = async () => {
     });
     return response.data
 }
-
 const getFormById = async (id:string) => {
     const response = await axios({
         method: 'GET',
@@ -36,7 +31,6 @@ const getFormById = async (id:string) => {
     });
     return response.data
 }
-
 const updateFormById = async (id:string,data) => {
 
     const jsonformatted = JSON.stringify(data)

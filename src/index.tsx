@@ -7,19 +7,15 @@ import { getForms } from './apis';
 import FormCard from './components/formCard';
 import SideBar from './components/sidebar';
 
-
 export default function App() {
     const [state, setState] = useState("view")
     const[formId,setFormId] = useState("")
     const [addFormDialogState, setAddFormDialogState] = useState(false);
     const [forms, setForms] = useState([]);
-
     const stateHandler = (id: SetStateAction<string>)=>{
         setState("edit")
         setFormId(id)
     }
-
-
     const openHandler = () => {
         setAddFormDialogState(addFormDialogState => !addFormDialogState)
         fetchForms()
@@ -28,13 +24,11 @@ export default function App() {
         const response = await getForms();
         setForms(response)
     }
-
     useEffect(() => {
         if (state === "view") {
             fetchForms()
         }
     }, [])
-
     const allforms = (
         <>
             {
@@ -44,13 +38,6 @@ export default function App() {
             }
         </>
     )
-    const editform = (
-        <>
-            hello ji
-        </>
-    )
-
-
     return (<>
         <Navbar openHandler={openHandler}></Navbar>
         <Stack direction="row" spacing={2} m={2}>
@@ -58,8 +45,6 @@ export default function App() {
                 state === "view" ? allforms : <SideBar formId={formId}></SideBar>
             }
         </Stack>
-
-
         <AddFormDialog addFormDialogState={addFormDialogState} openHandler={openHandler} ></AddFormDialog>
     </>)
 
