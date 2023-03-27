@@ -6,6 +6,10 @@ Task Frontend developed using [Single-spa](https://github.com/single-spa/single-
 
 Just start the backend first [backend](https://github.com/Sarthak001/task-backend)
 
+## Data
+
+Just add dummy data using ADD FORM from the UI or using mongodb cli
+
 ## Installation
 
 ```bash
